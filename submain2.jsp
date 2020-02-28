@@ -12,7 +12,11 @@ try{
 	int zone2nmA = getParam(request,"zone2nmA",0);
 	//application.log(zone3nmA + ":" + zone2nmA);
 <<<<<<< HEAD
+<<<<<<< HEAD
 	String sqlList = "SELECT t3.id, t3.seq, t3.zone3nm, t3.floor,t2.zone2nm ";
+=======
+	String sqlList = "SELECT t3.id, t3.seq,t3.zone3nm, t3.floor,t2.zone2nm ";
+>>>>>>> e974d1cd294b4393a629619cc31fb4caae15198e
 =======
 	String sqlList = "SELECT t3.id, t3.seq,t3.zone3nm, t3.floor,t2.zone2nm ";
 >>>>>>> e974d1cd294b4393a629619cc31fb4caae15198e

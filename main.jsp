@@ -15,6 +15,10 @@
 <%@ include file="../inc/header.jsp" %>
 <link rel="stylesheet" style="text/css" href="./css/mainstyle.css">
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+
+>>>>>>> e974d1cd294b4393a629619cc31fb4caae15198e
 =======
 
 >>>>>>> e974d1cd294b4393a629619cc31fb4caae15198e
@@ -68,6 +72,7 @@ try{
 	<!--  <hr class="hr1">-->
 	<div class="btn-wrapper"><!-- 일정 확인 버튼 공간 -->
 <<<<<<< HEAD
+<<<<<<< HEAD
 		<input type="button" value="  일정 확인  " class="checkedbtn" name="checkedbtn" id="checkedbtn" onclick="javascript:;">
 	</div>
 	<div class="show-wrapper"><!-- 일정확인 버튼 누르면 결과보여줄 공간 -->
@@ -77,11 +82,16 @@ try{
 		</table>
 	</div><!-- show-wrapper -->
 =======
+=======
+>>>>>>> e974d1cd294b4393a629619cc31fb4caae15198e
 		<input type="button" value="  일정 확인  " class="checkedbtn" name="checkedbtn" id="checkedbtn">
 	</div>
 	<div class="show-wrapper"><!-- 일정확인 버튼 누르면 결과보여줄 공간 -->
 	
 	</div>
+<<<<<<< HEAD
+>>>>>>> e974d1cd294b4393a629619cc31fb4caae15198e
+=======
 >>>>>>> e974d1cd294b4393a629619cc31fb4caae15198e
 </div>
 <script>
@@ -125,9 +135,12 @@ $(document).ready(function(){
 });
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 //결과 값을 누적해줄 배열 선언
 //이 배열에는 t3의 seq가 저장 
 var arrayResult = [];
+=======
+>>>>>>> e974d1cd294b4393a629619cc31fb4caae15198e
 =======
 >>>>>>> e974d1cd294b4393a629619cc31fb4caae15198e
 
@@ -149,6 +162,7 @@ $(function(){
 			        $selectid.append('<li id="all" name="all" class="all"><a href="javascript:;" class="allA" style="color:black;">전체</a></li>');
 			        
 <<<<<<< HEAD
+<<<<<<< HEAD
 			        /*00관 전체 클릭하면 체크 이미지 나오게*/
 			        $('.all').click(function(){
 			        	if($(this).hasClass('zone2Selected')){
@@ -167,6 +181,9 @@ $(function(){
 =======
 					$('.all').click(function(){
 >>>>>>> e974d1cd294b4393a629619cc31fb4caae15198e
+=======
+					$('.all').click(function(){
+>>>>>>> e974d1cd294b4393a629619cc31fb4caae15198e
 						$.ajax({
 					        url: "./allfloor.jsp",
 					        data: {zone2nmA: zone2nmA},
@@ -174,6 +191,7 @@ $(function(){
 					        type: "POST",
 					        dataType : "json" ,
 					        success:function(msg){
+<<<<<<< HEAD
 <<<<<<< HEAD
 					        	console.log(msg);
 						        var $selectid = $('.result-wrapper');
@@ -244,6 +262,8 @@ $(function(){
 						        
 						        
 =======
+=======
+>>>>>>> e974d1cd294b4393a629619cc31fb4caae15198e
 						        var $selectid = $('.result-wrapper');
 						        $.each(msg, function makeSelect(index, item){
 						        	$selectid.append('<button class="result">'+'<img class="closeimg" src="img/closeimg.png">'+item.t2zone2nm+" 전체  "+'</button>');	    
@@ -252,6 +272,9 @@ $(function(){
 						        		$('.result').remove();
 						        	});
 						        });//each
+<<<<<<< HEAD
+>>>>>>> e974d1cd294b4393a629619cc31fb4caae15198e
+=======
 >>>>>>> e974d1cd294b4393a629619cc31fb4caae15198e
 			      			  },//success
 			      			  error:function(jqXHR,textStatus,errorThrown) {
@@ -270,10 +293,16 @@ $(function(){
 			    	var zone3nmA= "";
 					$(".floor-li").on("click",function(){
 <<<<<<< HEAD
+<<<<<<< HEAD
 							//00관 전체가 눌렸을때는 alert띄우고
 				        	//alert(allCheck)
 				        	
 							var zone3nmA= $(this).attr('value');
+=======
+							var zone3nmA= $(this).attr('value');
+					 		//alert('floor층 = '+zone3nmA);
+						    //alert('zone2nmA = ' + zone2nmA);
+>>>>>>> e974d1cd294b4393a629619cc31fb4caae15198e
 =======
 							var zone3nmA= $(this).attr('value');
 					 		//alert('floor층 = '+zone3nmA);
@@ -288,6 +317,7 @@ $(function(){
 						        success:function(msg){
 						        	//console.log(msg);
 <<<<<<< HEAD
+<<<<<<< HEAD
 						        	if($('.all').hasClass('zone2Selected')){
 						        		//$('.checkimg').remove();
 						        		 $(this).removeClass('zone3Selected');
@@ -295,11 +325,14 @@ $(function(){
 						        	}else{ 
 =======
 >>>>>>> e974d1cd294b4393a629619cc31fb4caae15198e
+=======
+>>>>>>> e974d1cd294b4393a629619cc31fb4caae15198e
 							        var $selectid = $('.zone3nm-ul');
 							        $selectid.empty(); 
 							        $selectid.append('<li class="all2">'+ '<a href="javascript:;" class="allA2" style="color:black;" >' +
 							        				  zone3nmA +' 층 전체'+'</a></li>');
 							        $.each(msg, function makeSelect(index, item){
+<<<<<<< HEAD
 <<<<<<< HEAD
 							        	$selectid.append('<li class="zone3nm-li" name="zone3nm-li" id="zone3nm-'+item.t3seq+'">'+
 							        					 "("+item.t3id+") "+item.t3zone3nm+
@@ -347,6 +380,8 @@ $(function(){
 							        	arrayResult.push(zone3nmId);	
 							        	//console.log('배열에 들어간 값 : '+arrayResult);
 =======
+=======
+>>>>>>> e974d1cd294b4393a629619cc31fb4caae15198e
 							        	$selectid.append('<li class="zone3nm-li" id="zone3nm-li" name="zone3nm-li" value="'+item.t3seq+'">'+
 							        					 "("+item.t3id+") "+item.t3zone3nm+
 							        	'<a href="javascript:;" class="zone3nmA" id="zone3nmA" name="zone3nmA" style="color:black;">'+'</a>'+'</li>');
@@ -362,12 +397,19 @@ $(function(){
 							        /*클릭되면 이미지추가  '<img class="checkimg" src="img/checkimg.png">'+*/
 							        $('.all2').click(function(){
 							        	$(this).append('<img class="checkimg" src="img/checkimg.png">');//클릭된 그놈
+<<<<<<< HEAD
+>>>>>>> e974d1cd294b4393a629619cc31fb4caae15198e
+=======
 >>>>>>> e974d1cd294b4393a629619cc31fb4caae15198e
 							        });
 							        
 							        
 									$('.all2').click(function(){
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+										//alert('alljsajax');
+>>>>>>> e974d1cd294b4393a629619cc31fb4caae15198e
 =======
 										//alert('alljsajax');
 >>>>>>> e974d1cd294b4393a629619cc31fb4caae15198e
@@ -381,6 +423,7 @@ $(function(){
 									        success:function(msg){
 										        var $selectid = $('.result-wrapper');
 										        $.each(msg, function makeSelect(index, item){
+<<<<<<< HEAD
 <<<<<<< HEAD
 										        	
 										        	$selectid.append('<button class="t3Result" id="all2Id-'+item.t2seq+'_'+item.t3floor+'">'+
@@ -460,6 +503,8 @@ $(function(){
 										        
 										        
 =======
+=======
+>>>>>>> e974d1cd294b4393a629619cc31fb4caae15198e
 										        	$selectid.append('<button class="result">'+'<img class="closeimg" src="img/closeimg.png">'
 										        			+item.t2zone2nm+" "+item.t3floor+"층  전체  "+'</button>');	    
 										        	//클릭했을때 요소 제거                                                                                                                                                                                                                                                                                                                  
@@ -469,6 +514,9 @@ $(function(){
 										        	});
 										        });//each
 										    	
+<<<<<<< HEAD
+>>>>>>> e974d1cd294b4393a629619cc31fb4caae15198e
+=======
 >>>>>>> e974d1cd294b4393a629619cc31fb4caae15198e
 							      			  },//success
 							      			  error:function(jqXHR,textStatus,errorThrown) {
@@ -480,22 +528,32 @@ $(function(){
 							        	
 							        	
 <<<<<<< HEAD
+<<<<<<< HEAD
 							    /*여기서부터 zone3nm까지 누르면 전체 값 보여주는 공간*/
 										$(".zone3nm-li").on("click",function(){
 												var result = $(this).attr('id');
 												var seqt3 = result.split('-')[1];//순수한 zone3nm-li의 t3seq값 
 =======
+=======
+>>>>>>> e974d1cd294b4393a629619cc31fb4caae15198e
 							        /*여기서부터 zone3nm까지 누르면 전체 값 보여주는 공간*/
 						 		var result= "";
 										$(".zone3nm-li").on("click",function(){
 												var result= $(this).attr('value');
+<<<<<<< HEAD
+>>>>>>> e974d1cd294b4393a629619cc31fb4caae15198e
+=======
 >>>>>>> e974d1cd294b4393a629619cc31fb4caae15198e
 										 		//alert('건물:'+zone2nmA+' 층:'+zone3nmA+' 시설 :'+ result);
 											    
 											 	$.ajax({
 											        url: "./submain3.jsp",
 <<<<<<< HEAD
+<<<<<<< HEAD
 											        data: {result :seqt3, zone2nmA: zone2nmA, zone3nmA : zone3nmA},
+=======
+											        data: {result :result, zone2nmA: zone2nmA, zone3nmA : zone3nmA},
+>>>>>>> e974d1cd294b4393a629619cc31fb4caae15198e
 =======
 											        data: {result :result, zone2nmA: zone2nmA, zone3nmA : zone3nmA},
 >>>>>>> e974d1cd294b4393a629619cc31fb4caae15198e
@@ -504,6 +562,7 @@ $(function(){
 											        dataType : "json" ,
 											        success:function(msg){
 												        var $selectid = $('.result-wrapper');
+<<<<<<< HEAD
 <<<<<<< HEAD
 											        	//zone3nmli 에 class floorSelected가 있으면 다른 li클릭했을때 결과버튼 삭제
 														if($('.all2').hasClass('floorSelected')){
@@ -562,6 +621,8 @@ $(function(){
 												*/
 												        
 =======
+=======
+>>>>>>> e974d1cd294b4393a629619cc31fb4caae15198e
 												        $.each(msg, function makeSelect(index, item){
 												        	//클릭한 값 나오게 띄워주기
 												        	$selectid.append('<button class="result">'+
@@ -575,6 +636,9 @@ $(function(){
 												        	});
 												        });//each
 												    	
+<<<<<<< HEAD
+>>>>>>> e974d1cd294b4393a629619cc31fb4caae15198e
+=======
 >>>>>>> e974d1cd294b4393a629619cc31fb4caae15198e
 									        },//success
 									        error:function(jqXHR,textStatus,errorThrown) {
@@ -583,6 +647,7 @@ $(function(){
 									      });//ajax
 										});
 										
+<<<<<<< HEAD
 <<<<<<< HEAD
 										/*일정확인 누르면 table로 일정 보여주기*/
 										$(".checkedbtn").on("click",function(){
@@ -619,6 +684,8 @@ $(function(){
 									      });//ajax
 										});   
 =======
+=======
+>>>>>>> e974d1cd294b4393a629619cc31fb4caae15198e
 										/*전체클릭하면 전체 선택되었다는 결과 값 주고 전체 값 주는 json호출*/
 		
 									
@@ -626,6 +693,9 @@ $(function(){
 							        
 							        
 							        
+<<<<<<< HEAD
+>>>>>>> e974d1cd294b4393a629619cc31fb4caae15198e
+=======
 >>>>>>> e974d1cd294b4393a629619cc31fb4caae15198e
 							        
 						        },//success
@@ -637,6 +707,12 @@ $(function(){
 					
 								
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+									
+					/*'<img class="checkimg" src="img/checkimg.png">'*/
+					
+>>>>>>> e974d1cd294b4393a629619cc31fb4caae15198e
 =======
 									
 					/*'<img class="checkimg" src="img/checkimg.png">'*/
@@ -647,14 +723,20 @@ $(function(){
 			   	 	var submenu4 = $(this).parent(".floor-ul"); console.log(submenu4);
 			   	 	var submenu5 = $(submenu4).next(".zone3nm-ul"); console.log(submenu5);
 <<<<<<< HEAD
+<<<<<<< HEAD
 			    	  	if(submenu5.is(":visible") ){}
 			    	  	else {submenu5.slideDown();}
 =======
+=======
+>>>>>>> e974d1cd294b4393a629619cc31fb4caae15198e
 			    	  	if(submenu5.is(":visible") ){
 			   	 		   //submenu5.slideUp();
 			   		   }else {
 			   		       submenu5.slideDown();
 			   		   }
+<<<<<<< HEAD
+>>>>>>> e974d1cd294b4393a629619cc31fb4caae15198e
+=======
 >>>>>>> e974d1cd294b4393a629619cc31fb4caae15198e
 			   	 });//click
 			   	 
