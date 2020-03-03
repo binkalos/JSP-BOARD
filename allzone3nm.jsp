@@ -8,8 +8,6 @@
 <%@ page import="org.json.simple.*"%>
 <%
 try{
-<<<<<<< HEAD
-<<<<<<< HEAD
 	//zone3nmA는 층, zone2nmA 건물
 	int zone2nmA = getParam(request,"zone2nmA",0);
 	String zone3nmA = getParam(request,"zone3nmA","");//String type으로 받아오기 위해 마지막 파라미터 값을 0 -> " "으로 바꿔줌
@@ -17,19 +15,6 @@ try{
 	application.log("건물:"+zone2nmA+" 층:"+zone3nmA);
 	
 	String sqlList = "SELECT t2.seq, t2.zone2nm,t3.floor,t3.id,t3.zone3nm ";
-=======
-=======
->>>>>>> e974d1cd294b4393a629619cc31fb4caae15198e
-	String zone3nmA = getParam(request,"zone3nmA","");//String type으로 받아오기 위해 마지막 파라미터 값을 0 -> " "으로 바꿔줌
-	int zone2nmA = getParam(request,"zone2nmA",0);
-
-	application.log("건물:"+zone2nmA+" 층:"+zone3nmA);
-	
-	String sqlList = "SELECT t3.floor,t2.zone2nm ";
-<<<<<<< HEAD
->>>>>>> e974d1cd294b4393a629619cc31fb4caae15198e
-=======
->>>>>>> e974d1cd294b4393a629619cc31fb4caae15198e
 	sqlList+="FROM tb_zone3 as t3 JOIN tb_zone2 as t2 ON t2.seq = t3.seq_zone2 ";
 	sqlList+="JOIN tb_zone as t1 ON t1.seq = t2.seq_zone ";
 	sqlList+="WHERE t3.floor = ? and t2.seq = ?";
@@ -42,25 +27,12 @@ try{
     JSONObject object = null;
 
     while (rs.next())
-<<<<<<< HEAD
-<<<<<<< HEAD
     	
     {
     	object = new JSONObject();
     	object.put("t2seq",rs.getString("t2.seq"));
     	object.put("t3id",rs.getString("t3.id"));
     	object.put("t3zone3nm",rs.getString("t3.zone3nm"));
-=======
-=======
->>>>>>> e974d1cd294b4393a629619cc31fb4caae15198e
-    {
-    	object = new JSONObject();
-    	//object.put("t3id",rs.getString("t3.id"));
-    	//object.put("t3zone3nm",rs.getString("t3.zone3nm"));
-<<<<<<< HEAD
->>>>>>> e974d1cd294b4393a629619cc31fb4caae15198e
-=======
->>>>>>> e974d1cd294b4393a629619cc31fb4caae15198e
     	object.put("t3floor",rs.getString("t3.floor"));
     	object.put("t2zone2nm",rs.getString("t2.zone2nm"));
     	jsonArray.add(object);

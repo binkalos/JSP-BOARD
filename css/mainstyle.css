@@ -195,8 +195,6 @@ li {
 	width:10px;
 	height:10px;
 }
-<<<<<<< HEAD
-<<<<<<< HEAD
 #allCheckImg{
 	float:right;
 	width:10px;
@@ -224,19 +222,6 @@ li {
     border: solid 1px #1294AB;
     color: #1294AB;
     margin-left: 5px;
-=======
-=======
->>>>>>> e974d1cd294b4393a629619cc31fb4caae15198e
-.result{
-	background-color: white;
-	border: solid 1px #1294AB;
-	color: #1294AB;
-	
-	margin-left: 10%;
-<<<<<<< HEAD
->>>>>>> e974d1cd294b4393a629619cc31fb4caae15198e
-=======
->>>>>>> e974d1cd294b4393a629619cc31fb4caae15198e
 }
 .closeimg{
 	width: 10px;
@@ -246,8 +231,6 @@ li {
     margin-left: 5px;
 }
 .result-wrapper{
-<<<<<<< HEAD
-<<<<<<< HEAD
 	
 }
 .finalresult {
@@ -274,10 +257,4 @@ td{
 	position: relative;
 	margin-left: 15%;
 	/*margin-top: 10%;*/
-=======
-position: absolute;
->>>>>>> e974d1cd294b4393a629619cc31fb4caae15198e
-=======
-position: absolute;
->>>>>>> e974d1cd294b4393a629619cc31fb4caae15198e
 }

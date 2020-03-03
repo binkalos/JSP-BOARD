@@ -14,14 +14,6 @@
 <head>
 <%@ include file="../inc/header.jsp" %>
 <link rel="stylesheet" style="text/css" href="./css/mainstyle.css">
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
-
->>>>>>> e974d1cd294b4393a629619cc31fb4caae15198e
-=======
-
->>>>>>> e974d1cd294b4393a629619cc31fb4caae15198e
 </head>
 <body>
 <%
@@ -71,8 +63,6 @@ try{
 	</div><!-- select-wrapper -->
 	<!--  <hr class="hr1">-->
 	<div class="btn-wrapper"><!-- 일정 확인 버튼 공간 -->
-<<<<<<< HEAD
-<<<<<<< HEAD
 		<input type="button" value="  일정 확인  " class="checkedbtn" name="checkedbtn" id="checkedbtn" onclick="javascript:;">
 	</div>
 	<div class="show-wrapper"><!-- 일정확인 버튼 누르면 결과보여줄 공간 -->
@@ -81,18 +71,6 @@ try{
 			<!-- 일정확인 결과 -->
 		</table>
 	</div><!-- show-wrapper -->
-=======
-=======
->>>>>>> e974d1cd294b4393a629619cc31fb4caae15198e
-		<input type="button" value="  일정 확인  " class="checkedbtn" name="checkedbtn" id="checkedbtn">
-	</div>
-	<div class="show-wrapper"><!-- 일정확인 버튼 누르면 결과보여줄 공간 -->
-	
-	</div>
-<<<<<<< HEAD
->>>>>>> e974d1cd294b4393a629619cc31fb4caae15198e
-=======
->>>>>>> e974d1cd294b4393a629619cc31fb4caae15198e
 </div>
 <script>
 //클릭시 드롭다운
@@ -134,15 +112,9 @@ $(document).ready(function(){
 	 */
 });
 
-<<<<<<< HEAD
-<<<<<<< HEAD
 //결과 값을 누적해줄 배열 선언
 //이 배열에는 t3의 seq가 저장 
 var arrayResult = [];
-=======
->>>>>>> e974d1cd294b4393a629619cc31fb4caae15198e
-=======
->>>>>>> e974d1cd294b4393a629619cc31fb4caae15198e
 
 $(function(){
 		var zone2nmA= "";
@@ -161,8 +133,6 @@ $(function(){
 			        $selectid.empty();
 			        $selectid.append('<li id="all" name="all" class="all"><a href="javascript:;" class="allA" style="color:black;">전체</a></li>');
 			        
-<<<<<<< HEAD
-<<<<<<< HEAD
 			        /*00관 전체 클릭하면 체크 이미지 나오게*/
 			        $('.all').click(function(){
 			        	if($(this).hasClass('zone2Selected')){
@@ -178,12 +148,6 @@ $(function(){
 			        
 					$('.all').click(function(){
 						//oo관 전체
-=======
-					$('.all').click(function(){
->>>>>>> e974d1cd294b4393a629619cc31fb4caae15198e
-=======
-					$('.all').click(function(){
->>>>>>> e974d1cd294b4393a629619cc31fb4caae15198e
 						$.ajax({
 					        url: "./allfloor.jsp",
 					        data: {zone2nmA: zone2nmA},
@@ -191,8 +155,6 @@ $(function(){
 					        type: "POST",
 					        dataType : "json" ,
 					        success:function(msg){
-<<<<<<< HEAD
-<<<<<<< HEAD
 					        	console.log(msg);
 						        var $selectid = $('.result-wrapper');
 						       
@@ -253,36 +215,15 @@ $(function(){
 							      });//ajax
 								});   
 						        
+	
 						        
-						        
-						        
-						        
-						        
-						        
-						        
-						        
-=======
-=======
->>>>>>> e974d1cd294b4393a629619cc31fb4caae15198e
-						        var $selectid = $('.result-wrapper');
-						        $.each(msg, function makeSelect(index, item){
-						        	$selectid.append('<button class="result">'+'<img class="closeimg" src="img/closeimg.png">'+item.t2zone2nm+" 전체  "+'</button>');	    
-						        	//클릭했을때 요소 제거
-						        	$('.closeimg').click(function() {
-						        		$('.result').remove();
-						        	});
-						        });//each
-<<<<<<< HEAD
->>>>>>> e974d1cd294b4393a629619cc31fb4caae15198e
-=======
->>>>>>> e974d1cd294b4393a629619cc31fb4caae15198e
 			      			  },//success
 			      			  error:function(jqXHR,textStatus,errorThrown) {
 			     			     console.log(jqXHR.status+'\n'+jqXHR.statusText)
 			      			  }//error
-			      });//ajax
-				});//all
-					
+			    		  });//ajax
+					});//all
+							
 				
 			        $.each(msg, function makeSelect(index, item){
 			        	$selectid.append('<li class="floor-li" value="'+item.t3floor+'">'+item.t3floor+" 층"+
@@ -292,22 +233,10 @@ $(function(){
 			       
 			    	var zone3nmA= "";
 					$(".floor-li").on("click",function(){
-<<<<<<< HEAD
-<<<<<<< HEAD
 							//00관 전체가 눌렸을때는 alert띄우고
 				        	//alert(allCheck)
 				        	
 							var zone3nmA= $(this).attr('value');
-=======
-							var zone3nmA= $(this).attr('value');
-					 		//alert('floor층 = '+zone3nmA);
-						    //alert('zone2nmA = ' + zone2nmA);
->>>>>>> e974d1cd294b4393a629619cc31fb4caae15198e
-=======
-							var zone3nmA= $(this).attr('value');
-					 		//alert('floor층 = '+zone3nmA);
-						    //alert('zone2nmA = ' + zone2nmA);
->>>>>>> e974d1cd294b4393a629619cc31fb4caae15198e
 						 	$.ajax({
 						        url: "./submain2.jsp",
 						        data: {zone3nmA :zone3nmA, zone2nmA: zone2nmA},
@@ -316,44 +245,101 @@ $(function(){
 						        dataType : "json" ,
 						        success:function(msg){
 						        	//console.log(msg);
-<<<<<<< HEAD
-<<<<<<< HEAD
-						        	if($('.all').hasClass('zone2Selected')){
+						        	if($('.all').hasClass('zone3Selected')){
 						        		//$('.checkimg').remove();
-						        		 $(this).removeClass('zone3Selected');
+						         		 $(this).removeClass('zone3Selected');
+						        		 //체크 이미지 삭제
+						        		
 						        		 alert("해당 건물의 전체 시설이 선택되어있습니다.");
-						        	}else{ 
-=======
->>>>>>> e974d1cd294b4393a629619cc31fb4caae15198e
-=======
->>>>>>> e974d1cd294b4393a629619cc31fb4caae15198e
-							        var $selectid = $('.zone3nm-ul');
-							        $selectid.empty(); 
-							        $selectid.append('<li class="all2">'+ '<a href="javascript:;" class="allA2" style="color:black;" >' +
-							        				  zone3nmA +' 층 전체'+'</a></li>');
-							        $.each(msg, function makeSelect(index, item){
-<<<<<<< HEAD
-<<<<<<< HEAD
-							        	$selectid.append('<li class="zone3nm-li" name="zone3nm-li" id="zone3nm-'+item.t3seq+'">'+
-							        					 "("+item.t3id+") "+item.t3zone3nm+
-							        	'<a href="javascript:;" class="zone3nmA" id="'+item.t3seq+'" name="zone3nmA" style="color:black;">'+'</a>'+'</li>');
-							        });//each
-						     }//else
-						       
+						        	} else{ 
+								        var $selectid = $('.zone3nm-ul');
+								        $selectid.empty(); 
+								        $selectid.append('<li class="all2">'+ '<a href="javascript:;" class="allA2" style="color:black;" >' +
+								        				  zone3nmA +' 층 전체'+'</a></li>');
+								        $.each(msg, function makeSelect(index, item){
+								        	$selectid.append('<li class="zone3nm-li" name="zone3nm-li" id="zone3nm-'+item.t3seq+'">'+
+								        					 "("+item.t3id+") "+item.t3zone3nm+
+								        	'<a href="javascript:;" class="zone3nmA" id="'+item.t3seq+'" name="zone3nmA" style="color:black;">'+'</a>'+'</li>');
+								        	
+								        	//결과 담는 배열에 item.t3.seq 요소 있는지 확인 후 체크 이미지와 클래스 추가
+								        	if(arrayResult.includes(item.t3seq)) {
+								        	   $('#zone3nm-'+item.t3seq).append('<img class="checkimg" src="img/checkimg.png" id="img-'+item.t3seq+'">');//클릭된 그놈
+											   $('#zone3nm-'+item.t3seq).addClass('zone3Selected');
+								        	}
+							   			  });//each
+						  		   }//else
+						  	     
 							        /*시설 클릭되면 이미지추가 */
 							        $('.zone3nm-li').click(function(){ 
+							        	//alert("체크 이미지 지우는 함수에 입장! ");
 							        	var result = $(this).attr('id');
 							        	var zone3nmId = result.split('-')[1];//순수한 zone3nm-li의 t3seq값
 							        	if($(this).hasClass('zone3Selected')){
 									        $(this).removeClass('zone3Selected');
 									        // 이미지 버튼 지우기 추가
 									        $('#img-'+zone3nmId).remove();
+									        //버튼결과 지우기 추가 
+									    	$('#selected-'+zone3nmId).remove();
+									        //배열에서 지우기
+									    	for(var i = 0; i<arrayResult.length;i++){
+				    		        			if(arrayResult[i]==zone3nmId){
+				    			      				arrayResult.splice(i,1);
+				    			      			}//if
+				    		        		}
 									     }else {
 									        $(this).append('<img class="checkimg" src="img/checkimg.png" id="img-'+zone3nmId+'">');//클릭된 그놈
 										    $(this).addClass('zone3Selected');
+									        arrayResult.push(zone3nmId);
+									    	var seqt3 = result.split('-')[1];//순수한 zone3nm-li의 t3seq값 
+									    		//alert('건물:'+zone2nmA+' 층:'+zone3nmA+' 시설 :'+ result);
+									        
+									     	$.ajax({
+									            url: "./submain3.jsp",
+									            data: {result :seqt3, zone2nmA: zone2nmA, zone3nmA : zone3nmA},
+									            contentType: "application/x-www-form-urlencoded; charset=UTF-8",
+									            type: "POST",
+									            dataType : "json" ,
+									            success:function(msg){
+									    	        var $selectid = $('.result-wrapper');
+									            	//zone3nmli 에 class floorSelected가 있으면 다른 li클릭했을때 결과버튼 삭제
+									    			if($('.all2').hasClass('floorSelected')){
+
+									    				alert("해당 건물의 전체 시설이 선택되어있습니다.");
+									    			} else {
+									    	      	  $.each(msg, function makeSelect(index, item){
+									    		        	//클릭한 값 나오게 띄워주기
+									    		        	//console.log(msg);
+									    		        	$selectid.append('<button class="result" id="selected-'+seqt3+'">'+
+									    		        					 '<img class="closeimg" src="img/closeimg.png" id="img-'+seqt3+'">'+
+									    		        					  item.t2zone2nm+" "+item.t3floor+"층  "+item.t3zone3nm+'</button>');	
+									    		        	
+									    	        	//클릭했을때 요소 제거
+									    		        	$('.closeimg').click(function() {
+									    		        		//1.버튼클릭시 아래 버튼 결과 삭제
+									    		        		var result2 = $(this).attr('id');
+									    		        		var result3 = result2.split('-')[1];//seqt3
+									    		        		$('#selected-'+result3).remove();
+									    		        		//2.체크이미지 삭제
+									    		        		$('#img-'+result3+'.checkimg').remove();
+									    		        		//3.배열에 들어간 값이 지우기버튼과 동일 한 값 클릭시 삭제
+									    		        		//지우기 이미지 누른 값 배열에서 지워주기 이미지 id(result2)와 zone3nm-li의 li값이 같은 것
+									    		        		for(var i = 0; i<arrayResult.length;i++){
+									    		        			if(arrayResult[i]==result3){
+									    			      				arrayResult.splice(i,1);
+									    			      			}//if
+									    		        		}//for
+									    		        	});
+									    		        });//each
+
+									    		}//else
+
+									    		},//success
+									    		error:function(jqXHR,textStatus,errorThrown) {
+									    		  console.log(jqXHR.status+'\n'+jqXHR.statusText)
+									    		}//error
+									    	});//ajax
 									     }
-							        	
-									
+
 							        	
 							        });
 							        
@@ -372,47 +358,9 @@ $(function(){
 									        }
 							        });
 							        
-							        /*마지막 시설리스트를 클릭하면 클릭한 값이 배열로 들어간다*/
-							        $('.zone3nm-li').click(function(){
-							        	var result = $(this).attr('id');
-							        	var zone3nmId = result.split('-')[1];//순수한 zone3nm-li의 t3seq값 
-							        	//alert('배열에 들어가는 값 : '+zone3nmId);
-							        	arrayResult.push(zone3nmId);	
-							        	//console.log('배열에 들어간 값 : '+arrayResult);
-=======
-=======
->>>>>>> e974d1cd294b4393a629619cc31fb4caae15198e
-							        	$selectid.append('<li class="zone3nm-li" id="zone3nm-li" name="zone3nm-li" value="'+item.t3seq+'">'+
-							        					 "("+item.t3id+") "+item.t3zone3nm+
-							        	'<a href="javascript:;" class="zone3nmA" id="zone3nmA" name="zone3nmA" style="color:black;">'+'</a>'+'</li>');
-							        });//each
-							        
-							        
-							        /*클릭되면 이미지추가  '<img class="checkimg" src="img/checkimg.png">'+*/
-							        $('.zone3nm-li').click(function(){
-							        	$(this).append('<img class="checkimg" src="img/checkimg.png">');//클릭된 그놈
-							        });
-							        
-							        
-							        /*클릭되면 이미지추가  '<img class="checkimg" src="img/checkimg.png">'+*/
-							        $('.all2').click(function(){
-							        	$(this).append('<img class="checkimg" src="img/checkimg.png">');//클릭된 그놈
-<<<<<<< HEAD
->>>>>>> e974d1cd294b4393a629619cc31fb4caae15198e
-=======
->>>>>>> e974d1cd294b4393a629619cc31fb4caae15198e
-							        });
-							        
+				
 							        
 									$('.all2').click(function(){
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
-										//alert('alljsajax');
->>>>>>> e974d1cd294b4393a629619cc31fb4caae15198e
-=======
-										//alert('alljsajax');
->>>>>>> e974d1cd294b4393a629619cc31fb4caae15198e
 										//선택한 건물의 층의 전체
 										$.ajax({
 									        url: "./allzone3nm.jsp",
@@ -423,8 +371,6 @@ $(function(){
 									        success:function(msg){
 										        var $selectid = $('.result-wrapper');
 										        $.each(msg, function makeSelect(index, item){
-<<<<<<< HEAD
-<<<<<<< HEAD
 										        	
 										        	$selectid.append('<button class="t3Result" id="all2Id-'+item.t2seq+'_'+item.t3floor+'">'+
 										        					 '<img class="closeimg" src="img/closeimg.png">'+
@@ -437,15 +383,14 @@ $(function(){
 										        		$('.checkimg').remove();
 										        	});
 										        	//결과버튼 한번만 생기도록하기
-										        
-														if($('.all2').hasClass('floorSelected_button')){
-													        $('.all2').removeClass('floorSelected_button');
-													        // 결과 버튼 지우기
-													        $('#all2Id-'+item.t2seq+'_'+item.t3floor).remove();
-													     } else {   
-														    $('.all2').addClass('floorSelected_button');
-													     }
-											       // });
+													if($('.all2').hasClass('floorSelected_button')){
+												        $('.all2').removeClass('floorSelected_button');
+												        // 결과 버튼 지우기
+												        $('#all2Id-'+item.t2seq+'_'+item.t3floor).remove();
+												     } else {   
+													    $('.all2').addClass('floorSelected_button');
+							            			 }
+											       
 										        	
 										        });//each
 									       
@@ -488,167 +433,26 @@ $(function(){
 														        						'<td>'+item.t3zone3nm+'</td>'+
 														        					  '</tr>');	
 														        });//each
-											        },//success
-											        error:function(jqXHR,textStatus,errorThrown) {
-											          console.log(jqXHR.status+'\n'+jqXHR.statusText)
-											        }//error
-											      });//ajax
-												});   
-										        
-										        
-										        
-										        
-										        
-										        
-										        
-										        
-=======
-=======
->>>>>>> e974d1cd294b4393a629619cc31fb4caae15198e
-										        	$selectid.append('<button class="result">'+'<img class="closeimg" src="img/closeimg.png">'
-										        			+item.t2zone2nm+" "+item.t3floor+"층  전체  "+'</button>');	    
-										        	//클릭했을때 요소 제거                                                                                                                                                                                                                                                                                                                  
-										        	$('.closeimg').click(function() {
-										        		$('.result').remove();
-										        		$('.checkimg').remove();
-										        	});
-										        });//each
-										    	
-<<<<<<< HEAD
->>>>>>> e974d1cd294b4393a629619cc31fb4caae15198e
-=======
->>>>>>> e974d1cd294b4393a629619cc31fb4caae15198e
-							      			  },//success
-							      			  error:function(jqXHR,textStatus,errorThrown) {
-							     			     console.log(jqXHR.status+'\n'+jqXHR.statusText)
-							      			  }//error
-							      });//ajax
-								});//all2
+														        },//success
+														        error:function(jqXHR,textStatus,errorThrown) {
+														          console.log(jqXHR.status+'\n'+jqXHR.statusText)
+														        }//error
+												      });//ajax
+													});   
+							
+												        
+									        },//success
+						      			  error:function(jqXHR,textStatus,errorThrown) {
+						     			     console.log(jqXHR.status+'\n'+jqXHR.statusText)
+						      			  }//error
+								      });//ajax
+									});//all2
 							        						        
 							        	
 							        	
-<<<<<<< HEAD
-<<<<<<< HEAD
 							    /*여기서부터 zone3nm까지 누르면 전체 값 보여주는 공간*/
-										$(".zone3nm-li").on("click",function(){
-												var result = $(this).attr('id');
-												var seqt3 = result.split('-')[1];//순수한 zone3nm-li의 t3seq값 
-=======
-=======
->>>>>>> e974d1cd294b4393a629619cc31fb4caae15198e
-							        /*여기서부터 zone3nm까지 누르면 전체 값 보여주는 공간*/
-						 		var result= "";
-										$(".zone3nm-li").on("click",function(){
-												var result= $(this).attr('value');
-<<<<<<< HEAD
->>>>>>> e974d1cd294b4393a629619cc31fb4caae15198e
-=======
->>>>>>> e974d1cd294b4393a629619cc31fb4caae15198e
-										 		//alert('건물:'+zone2nmA+' 층:'+zone3nmA+' 시설 :'+ result);
-											    
-											 	$.ajax({
-											        url: "./submain3.jsp",
-<<<<<<< HEAD
-<<<<<<< HEAD
-											        data: {result :seqt3, zone2nmA: zone2nmA, zone3nmA : zone3nmA},
-=======
-											        data: {result :result, zone2nmA: zone2nmA, zone3nmA : zone3nmA},
->>>>>>> e974d1cd294b4393a629619cc31fb4caae15198e
-=======
-											        data: {result :result, zone2nmA: zone2nmA, zone3nmA : zone3nmA},
->>>>>>> e974d1cd294b4393a629619cc31fb4caae15198e
-											        contentType: "application/x-www-form-urlencoded; charset=UTF-8",
-											        type: "POST",
-											        dataType : "json" ,
-											        success:function(msg){
-												        var $selectid = $('.result-wrapper');
-<<<<<<< HEAD
-<<<<<<< HEAD
-											        	//zone3nmli 에 class floorSelected가 있으면 다른 li클릭했을때 결과버튼 삭제
-														if($('.all2').hasClass('floorSelected')){
-															/*
-															var zone3Result = $(this).attr('id');
-															var zone3Seq = zone3Resul.split('-')[1];//순수한 zone3nm-li의 t3seq값
-															
-															
-															$('#zone3nm-'+zone3Seq).remove();*/
-															alert("해당 건물의 전체 시설이 선택되어있습니다.");
-														}else{
-												        $.each(msg, function makeSelect(index, item){
-												        	//클릭한 값 나오게 띄워주기
-												        	//console.log(msg);
-												        	$selectid.append('<button class="result" id="selected-'+seqt3+'">'+
-												        					 '<img class="closeimg" src="img/closeimg.png" id="img-'+seqt3+'">'+
-												        					  item.t2zone2nm+" "+item.t3floor+"층  "+item.t3zone3nm+'</button>');	
-												        	
-												        	//클릭했을때 요소 제거
-												        	$('.closeimg').click(function() {
-												        		//1.버튼클릭시 아래 버튼 결과 삭제
-												        		var result2 = $(this).attr('id');
-												        		var result3 = result2.split('-')[1];//seqt3
-												        		$('#selected-'+result3).remove();
-												        		//2.체크이미지 삭제
-												        		$('#img-'+result3+'.checkimg').remove();
-												        		//3.배열에 들어간 값이 지우기버튼과 동일 한 값 클릭시 삭제
-												        		//지우기 이미지 누른 값 배열에서 지워주기 이미지 id(result2)와 zone3nm-li의 li값이 같은 것
-												        		for(var i = 0; i<arrayResult.length;i++){
-												        			if(arrayResult[i]==result3){
-													      				arrayResult.splice(i,1);
-													      			}//if
-												        		}//for
-												        	});
-												        });//each
-												}//else
-													
-													
-												  
-												 /*  $('.zone3nm-li').click(function(){
-													   var zone3nmli = $(this).attr('id');
-													   var noimg = $('.result').attr('id');
-													   var noimg2 = noimg.split('-')[1];
-													   var chkimg = $('.closeimg').attr('id');
-													   var chkimg2 = chkimg.split('-')[1];
-													   for(var i = 0; i<arrayResult.length;i++){
-												   	   		if(zone3nmli==noimg2){
-													   			alert("이미 선택하신 필터입니다.");
-													   			$('#selected-'+chkimg2).remove();//아래 버튼으로 나오는 결과 삭제
-													   			$('#img-'+chkimg2+'.checkimg').remove();//이미지 가장 최근에 누른것만 삭제
-													   			arrayResult.splice(i,1);
-											        		}//if
-											        		break;
-												   		}//for
-												   });
-												*/
-												        
-=======
-=======
->>>>>>> e974d1cd294b4393a629619cc31fb4caae15198e
-												        $.each(msg, function makeSelect(index, item){
-												        	//클릭한 값 나오게 띄워주기
-												        	$selectid.append('<button class="result">'+
-												        					 '<img class="closeimg" src="img/closeimg.png">'+
-												        					  item.t2zone2nm+" "+item.t3floor+"층  "+item.t3zone3nm+'</button>');	
-												        	//클릭했을때 요소 제거
-												        	$('.closeimg').click(function() {
-												        		$('.result').remove();
-												        		
-												        		$('.checkimg').remove();
-												        	});
-												        });//each
-												    	
-<<<<<<< HEAD
->>>>>>> e974d1cd294b4393a629619cc31fb4caae15198e
-=======
->>>>>>> e974d1cd294b4393a629619cc31fb4caae15198e
-									        },//success
-									        error:function(jqXHR,textStatus,errorThrown) {
-									          console.log(jqXHR.status+'\n'+jqXHR.statusText)
-									        }//error
-									      });//ajax
-										});
+
 										
-<<<<<<< HEAD
-<<<<<<< HEAD
 										/*일정확인 누르면 table로 일정 보여주기*/
 										$(".checkedbtn").on("click",function(){
 
@@ -683,20 +487,6 @@ $(function(){
 									        }//error
 									      });//ajax
 										});   
-=======
-=======
->>>>>>> e974d1cd294b4393a629619cc31fb4caae15198e
-										/*전체클릭하면 전체 선택되었다는 결과 값 주고 전체 값 주는 json호출*/
-		
-									
-							        
-							        
-							        
-							        
-<<<<<<< HEAD
->>>>>>> e974d1cd294b4393a629619cc31fb4caae15198e
-=======
->>>>>>> e974d1cd294b4393a629619cc31fb4caae15198e
 							        
 						        },//success
 						        error:function(jqXHR,textStatus,errorThrown) {
@@ -706,38 +496,12 @@ $(function(){
 					});
 					
 								
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
-									
-					/*'<img class="checkimg" src="img/checkimg.png">'*/
-					
->>>>>>> e974d1cd294b4393a629619cc31fb4caae15198e
-=======
-									
-					/*'<img class="checkimg" src="img/checkimg.png">'*/
-					
->>>>>>> e974d1cd294b4393a629619cc31fb4caae15198e
 			        /*클릭된게 확인 되면 마지막 ul보여주기*/
 			   	 $(".floor-li").click(function(){
-			   	 	var submenu4 = $(this).parent(".floor-ul"); console.log(submenu4);
-			   	 	var submenu5 = $(submenu4).next(".zone3nm-ul"); console.log(submenu5);
-<<<<<<< HEAD
-<<<<<<< HEAD
+			   	 	var submenu4 = $(this).parent(".floor-ul"); //console.log(submenu4);
+			   	 	var submenu5 = $(submenu4).next(".zone3nm-ul"); //console.log(submenu5);
 			    	  	if(submenu5.is(":visible") ){}
 			    	  	else {submenu5.slideDown();}
-=======
-=======
->>>>>>> e974d1cd294b4393a629619cc31fb4caae15198e
-			    	  	if(submenu5.is(":visible") ){
-			   	 		   //submenu5.slideUp();
-			   		   }else {
-			   		       submenu5.slideDown();
-			   		   }
-<<<<<<< HEAD
->>>>>>> e974d1cd294b4393a629619cc31fb4caae15198e
-=======
->>>>>>> e974d1cd294b4393a629619cc31fb4caae15198e
 			   	 });//click
 			   	 
 			   	 /*zone3nm-li클릭하면 체크 이미지나오게
@@ -753,7 +517,9 @@ $(function(){
 		});
 });	//function
 
+function callFunction(){
 
+};
 
 </script>
 </body>

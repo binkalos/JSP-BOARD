@@ -11,15 +11,7 @@ try{
 	String zone3nmA = getParam(request,"zone3nmA","");//String type으로 받아오기 위해 마지막 파라미터 값을 0 -> " "으로 바꿔줌
 	int zone2nmA = getParam(request,"zone2nmA",0);
 	//application.log(zone3nmA + ":" + zone2nmA);
-<<<<<<< HEAD
-<<<<<<< HEAD
 	String sqlList = "SELECT t3.id, t3.seq, t3.zone3nm, t3.floor,t2.zone2nm ";
-=======
-	String sqlList = "SELECT t3.id, t3.seq,t3.zone3nm, t3.floor,t2.zone2nm ";
->>>>>>> e974d1cd294b4393a629619cc31fb4caae15198e
-=======
-	String sqlList = "SELECT t3.id, t3.seq,t3.zone3nm, t3.floor,t2.zone2nm ";
->>>>>>> e974d1cd294b4393a629619cc31fb4caae15198e
 	sqlList+="FROM tb_zone3 as t3 JOIN tb_zone2 as t2 ON t2.seq = t3.seq_zone2 ";
 	sqlList+="JOIN tb_zone as t1 ON t1.seq = t2.seq_zone ";
 	sqlList+="WHERE t3.floor = ? and t2.seq = ?";
