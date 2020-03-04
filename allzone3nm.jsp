@@ -8,28 +8,42 @@
 <%@ page import="org.json.simple.*"%>
 <%
 try{
-	String zone3nmA = getParam(request,"zone3nmA","");//String type으로 받아오기 위해 마지막 파라미터 값을 0 -> " "으로 바꿔줌
-	int zone2nmA = getParam(request,"zone2nmA",0);
-
-	//application.log("건물:"+zone2nmA+" 층:"+zone3nmA);
+	//zone3nmA는 층, zone2nmA 건물
+	String[] zone2Array = getParam(request,"zone2Array");
+	String zone2ArrayResult = "";
+	String[] zone3Array = getParam(request,"zone3Array");
+	String zone3ArrayResult = "";
 	
-	String sqlList = "SELECT t3.floor,t2.zone2nm ";
+	for(int i = 0; i<zone2Array.length;i++){
+		zone2ArrayResult += (zone2Array[i]+",");
+	}
+	zone2ArrayResult = zone2ArrayResult.substring(0,zone2ArrayResult.length()-1);
+	
+	
+	
+	for(int j = 0; j< zone3Array.length;j++){
+		zone3ArrayResult += (zone3Array[j]+",");
+	}
+	zone3ArrayResult = zone3ArrayResult.substring(0,zone3ArrayResult.length()-1);
+	
+	String sqlList = "SELECT t2.seq, t2.zone2nm,t3.floor,t3.id,t3.zone3nm ";
 	sqlList+="FROM tb_zone3 as t3 JOIN tb_zone2 as t2 ON t2.seq = t3.seq_zone2 ";
 	sqlList+="JOIN tb_zone as t1 ON t1.seq = t2.seq_zone ";
-	sqlList+="WHERE t3.floor = ? and t2.seq = ?";
+	sqlList+="WHERE t3.floor in (" + zone3ArrayResult + ") and t2.seq in (" + zone2ArrayResult + ")";
 	pstmt = dbconn.prepareStatement(sqlList);
-    pstmt.setString(1,zone3nmA);
-    pstmt.setInt(2,zone2nmA);
+  
     rs = pstmt.executeQuery();
     
     JSONArray jsonArray = new JSONArray();
     JSONObject object = null;
 
     while (rs.next())
+    	
     {
     	object = new JSONObject();
-    	//object.put("t3id",rs.getString("t3.id"));
-    	//object.put("t3zone3nm",rs.getString("t3.zone3nm"));
+    	object.put("t2seq",rs.getString("t2.seq"));
+    	object.put("t3id",rs.getString("t3.id"));
+    	object.put("t3zone3nm",rs.getString("t3.zone3nm"));
     	object.put("t3floor",rs.getString("t3.floor"));
     	object.put("t2zone2nm",rs.getString("t2.zone2nm"));
     	jsonArray.add(object);

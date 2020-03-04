@@ -8,24 +8,24 @@
 <%@ page import="org.json.simple.*"%>
 <%
 try{
+	//배열을 받아와서 할 때는 배열의 길이가 정해져 있지 않기 때문에 ?를 가변적으로 만들어 줘야 함
+	String[] arrayResult = getParam(request,"arrayResult"); //클릭한 값들의 seq번호가 담기는 배열
+	//zone3nmResult에 배열의 값을 담아서 set하지 않고 바로 쿼리문에 적용
+	String zone3nmResult = "";
+	for(int i = 0 ; i < arrayResult.length; i++) {
+		zone3nmResult += (arrayResult[i]+",");
+	}
+	//[1],[2],[3],
+	zone3nmResult = zone3nmResult.substring(0,zone3nmResult.length()-1);//맨마지막에 생기는 , 빼주기 위해 -1함
 	
-	String[] arrayResult = getParam(request,"arrayResult");
-	//String[] arrayResult = request.getParameterValues("string[]");
-	for(int i = 0; i<arrayResult.length; i++){
-	// for(String str:arrayResult){
-		application.log("" + arrayResult[i]);
-	
-		String sqlList = "SELECT t2.zone2nm,t3.floor,t3.id,t3.zone3nm ";
-		sqlList+="FROM tb_zone3 as t3 JOIN tb_zone2 as t2 ON t2.seq = t3.seq_zone2 ";
-		sqlList+="JOIN tb_zone as t1 ON t1.seq = t2.seq_zone ";
-		sqlList+="WHERE t3.seq = ?";
-		pstmt = dbconn.prepareStatement(sqlList);
-	    pstmt.setString(1,arrayResult[i]); 
-	    rs = pstmt.executeQuery(); //haldang   
-	}//for
-	 
-	
-    JSONArray jsonArray = new JSONArray();
+	String sqlList = "SELECT t2.zone2nm,t3.floor,t3.id,t3.zone3nm ";
+	sqlList+= "FROM tb_zone3 as t3 JOIN tb_zone2 as t2 ON t2.seq = t3.seq_zone2 ";
+	sqlList+= "JOIN tb_zone as t1 ON t1.seq = t2.seq_zone ";
+	sqlList+= "WHERE t3.seq in (" + zone3nmResult + ")";
+	pstmt = dbconn.prepareStatement(sqlList);
+	rs = pstmt.executeQuery(); //할당 
+
+    JSONArray jsonArray = new JSONArray(); 
     JSONObject object = null;
   
     while (rs.next())
