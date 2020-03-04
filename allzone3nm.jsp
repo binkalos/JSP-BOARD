@@ -21,8 +21,13 @@ try{
 	
 	
 	
+<<<<<<< HEAD
 	for(int j = 0; j< zone3Array.length;j++){
 		zone3ArrayResult += (zone3Array[j]+",");
+=======
+	for(int i = 0; i< zone3Array.length;i++){
+		zone3ArrayResult += (zone3Array[i]+",");
+>>>>>>> 64d97ed7b0b8e9746b1442263c24c299f013d4a4
 	}
 	zone3ArrayResult = zone3ArrayResult.substring(0,zone3ArrayResult.length()-1);
 	
