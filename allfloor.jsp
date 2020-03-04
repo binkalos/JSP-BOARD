@@ -8,14 +8,19 @@
 <%@ page import="org.json.simple.*"%>
 <%
 try{
-	int zone2nmA = getParam(request,"zone2nmA",0);
-	//application.log(""+zone2nmA);
+	String[] zone2Array = getParam(request,"zone2Array");
+	String zone2ArrayResult = "";
+	for(int i = 0; i<zone2Array.length;i++){
+		zone2ArrayResult += (zone2Array[i]+",");
+	}
+	zone2ArrayResult = zone2ArrayResult.substring(0,zone2ArrayResult.length()-1);
+	
 	String sqlList = "SELECT t2.zone2nm,t3.floor,t3.id,t3.zone3nm ";
 	sqlList+= "FROM tb_zone3 as t3 JOIN tb_zone2 as t2 ON t2.seq = t3.seq_zone2 ";
 	sqlList+= "JOIN tb_zone as t1 ON t1.seq = t2.seq_zone ";
-	sqlList+= "WHERE t2.seq = ?";
+	sqlList+= "WHERE t2.seq in (" + zone2ArrayResult + ")";
 	pstmt = dbconn.prepareStatement(sqlList);
-    pstmt.setInt(1,zone2nmA);
+
     rs = pstmt.executeQuery();
     
     JSONArray jsonArray = new JSONArray();
@@ -26,7 +31,7 @@ try{
     	object = new JSONObject();
     	object.put("t3floor",rs.getString("t3.floor"));
     	object.put("t2zone2nm",rs.getString("t2.zone2nm"));
-    	object.put("t3id",rs.getString("t3.id"));
+    	object.put(" t3id",rs.getString("t3.id"));
     	object.put("t3zone3nm",rs.getString("t3.zone3nm"));
     	jsonArray.add(object);
         object = null;

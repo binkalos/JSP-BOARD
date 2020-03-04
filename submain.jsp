@@ -9,7 +9,6 @@
 <%
 try{
 	int zone2nmA = getParam(request,"zone2nmA",0);
-	//application.log(""+zone2nmA);
 	String sqlList = "SELECT MIN(t3.seq),t3.floor FROM tb_zone3 as t3 JOIN tb_zone2 as t2 ON t2.seq = t3.seq_zone2 JOIN tb_zone as t1 ON t1.seq = t2.seq_zone WHERE t2.seq = ? GROUP BY t3.floor order by t3.floor desc";
 	pstmt = dbconn.prepareStatement(sqlList);
     pstmt.setInt(1,zone2nmA);
