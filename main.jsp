@@ -117,11 +117,11 @@ $(function(){
 		$(".zone2nm-li").on("click",function(){
 	 		var zone2nmA= $(this).attr('value');
 		 	//alert('건물seq : '+zone2nmA);
-<<<<<<< HEAD
+//<<<<<<< HEAD
 		 
-=======
-		 	zone2Array.push(zone2nmA);
->>>>>>> 64d97ed7b0b8e9746b1442263c24c299f013d4a4
+// =======
+// 		 	zone2Array.push(zone2nmA);
+// >>>>>>> 64d97ed7b0b8e9746b1442263c24c299f013d4a4
 		 	//console.log(zone2Array);
 
 		 	$.ajax({ 
@@ -160,35 +160,35 @@ $(function(){
 					        type: "POST",
 					        dataType : "json" ,
 					        success:function(msg){
-<<<<<<< HEAD
+//<<<<<<< HEAD
 					      	
 						        var $selectid = $('.result-wrapper');
 							       // $.each(msg, function makeSelect(index, item){
 							        	//$selectid.empty();
 							        	$selectid.append('<button class="t2Result" id="btn'+ t2zone2nm +'">'+'<img class="closeimg" src="img/closeimg.png">'+t2zone2nm+" 전체  "+'</button>');	    
-=======
-					        	console.log(msg);
-						        var $selectid = $('.result-wrapper');
-						       //if($('.all').hasClass('zone2Selected')){
+// =======
+// 					        	console.log(msg);
+// 						        var $selectid = $('.result-wrapper');
+// 						       //if($('.all').hasClass('zone2Selected')){
 						    	   
-							       //alert('zone2Selected뜸');
-							        $.each(msg, function makeSelect(index, item){
-							        	$selectid.empty();
-							        	$selectid.append('<button class="t2Result">'+'<img class="closeimg" src="img/closeimg.png">'+item.t2zone2nm+" 전체  "+'</button>');	    
->>>>>>> 64d97ed7b0b8e9746b1442263c24c299f013d4a4
+// 							       //alert('zone2Selected뜸');
+// 							        $.each(msg, function makeSelect(index, item){
+// 							        	$selectid.empty();
+// 							        	$selectid.append('<button class="t2Result">'+'<img class="closeimg" src="img/closeimg.png">'+item.t2zone2nm+" 전체  "+'</button>');	    
+// >>>>>>> 64d97ed7b0b8e9746b1442263c24c299f013d4a4
 							        	//클릭했을때 요소 제거
 							        	$('.closeimg').click(function() {
 							        		$('.t2Result').remove();
 							        		$('#allCheckImg').remove();
 							        	});
 	
-<<<<<<< HEAD
+//<<<<<<< HEAD
 							       // });//each
 						      
-=======
-							        });//each
-						       //}//if
->>>>>>> 64d97ed7b0b8e9746b1442263c24c299f013d4a4
+// =======
+// 							        });//each
+// 						       //}//if
+// >>>>>>> 64d97ed7b0b8e9746b1442263c24c299f013d4a4
 						        //all눌렀을때 결과버튼 지우기
 						        if($('.all').hasClass('removeResultAll')){
 					        		$('.all').removeClass('removeResultAll');
@@ -233,11 +233,11 @@ $(function(){
 						        	//console.log(msg);
 						        	//alert('전체 처리 함수 입장');
 						        	if($('.all').hasClass('zone2Selected')){
-<<<<<<< HEAD
+// <<<<<<< HEAD
 						        		 alert('해당 건물의 전체 층이 선택되어있습니다.');
-=======
-						        		 alert('해당 건물의 전체 시설이 선택되어있습니다.');
->>>>>>> 64d97ed7b0b8e9746b1442263c24c299f013d4a4
+// =======
+// 						        		 alert('해당 건물의 전체 시설이 선택되어있습니다.');
+// >>>>>>> 64d97ed7b0b8e9746b1442263c24c299f013d4a4
 						        		 return;
 						        	} 
 								        var $selectid = $('.zone3nm-ul');
@@ -306,11 +306,11 @@ $(function(){
 									    		        					  item.t2zone2nm+" "+item.t3floor+"층  "+item.t3zone3nm+'</button>');	
 									    		        	
 									    	        	//클릭했을때 요소 제거
-<<<<<<< HEAD
+// <<<<<<< HEAD
 									    		        	$('#selected-'+seqt3).click(function() {
-=======
-									    		        	$('.closeimg').click(function() {
->>>>>>> 64d97ed7b0b8e9746b1442263c24c299f013d4a4
+// =======
+// 									    		        	$('.closeimg').click(function() {
+// >>>>>>> 64d97ed7b0b8e9746b1442263c24c299f013d4a4
 									    		        		//1.버튼클릭시 아래 버튼 결과 삭제
 									    		        		var result2 = $(this).attr('id');
 									    		        		var result3 = result2.split('-')[1];//seqt3
@@ -354,16 +354,16 @@ $(function(){
 									        	$('#all2Id-'+zone2Id).remove();
 									        } else {
 									        	$('.result-wrapper').append('<button class="t3Result" id="all2Id-'+zone2Id+'">'+
-<<<<<<< HEAD
+// <<<<<<< HEAD
 							        					 '<img class="closeimg" src="img/closeimg.png" id="all2Img-'+zone2Id+'">'+
-=======
-							        					 '<img class="closeimg" src="img/closeimg.png">'+
->>>>>>> 64d97ed7b0b8e9746b1442263c24c299f013d4a4
+// =======
+// 							        					 '<img class="closeimg" src="img/closeimg.png">'+
+// >>>>>>> 64d97ed7b0b8e9746b1442263c24c299f013d4a4
 							        							 floorId+"층  전체  "+
 							        					 '</button>');
 									        	$(this).append('<img id="checkimg-all2" class="checkimg" src="img/checkimg.png">');//클릭된 그놈
 										        $(this).addClass('floorSelected');
-<<<<<<< HEAD
+// <<<<<<< HEAD
 									        
 										    	var all2ImgId = $('.closeimg').attr('id'); 	//alert(all2ImgId);
 								        		var all2ImgSeq = all2ImgId.split('-')[1];
@@ -382,9 +382,9 @@ $(function(){
 									        }//else
 							        	 
 							        	 	
-=======
-									        }
->>>>>>> 64d97ed7b0b8e9746b1442263c24c299f013d4a4
+// =======
+// 									        }
+// >>>>>>> 64d97ed7b0b8e9746b1442263c24c299f013d4a4
 							        	 	//console.log($('.zone3nm-li').length);
 							        		//zone3nm-li가 클릭된 후 전체 누르면 선택된거 지워지게
 							        		
@@ -404,11 +404,11 @@ $(function(){
 													       // alert('해당층의 전체를 누르셨습니다.');
 									        		}//if
 								        		}//for
-<<<<<<< HEAD
+// <<<<<<< HEAD
 
-=======
+// =======
 								        		
->>>>>>> 64d97ed7b0b8e9746b1442263c24c299f013d4a4
+// >>>>>>> 64d97ed7b0b8e9746b1442263c24c299f013d4a4
 							        });
 					
 
@@ -421,15 +421,15 @@ $(function(){
 						     
 					});
 					
-<<<<<<< HEAD
+// <<<<<<< HEAD
 					
 					
 				
 					
 					
 					
-=======
->>>>>>> 64d97ed7b0b8e9746b1442263c24c299f013d4a4
+// =======
+// >>>>>>> 64d97ed7b0b8e9746b1442263c24c299f013d4a4
 								
 			        /*클릭된게 확인 되면 마지막 ul보여주기*/
 			   	 $(".floor-li").click(function(){
@@ -458,7 +458,7 @@ $(function(){
 
 /*00관 전체 일정확인 결과 보여주기*/
 $(".checkedbtn").on("click",function(){
-<<<<<<< HEAD
+// <<<<<<< HEAD
 	var $selectid = $('.finalresult');
 	//console.log(zone2Array + ':' + zone3Array);
     $selectid.empty();	
@@ -468,9 +468,9 @@ $(".checkedbtn").on("click",function(){
 						'<td> 호 </td>'+
 						'<td> 시설명 </td>'+
 					  '</tr>');	
-=======
-	console.log(zone2Array + ':' + zone3Array);
->>>>>>> 64d97ed7b0b8e9746b1442263c24c299f013d4a4
+// =======
+// 	console.log(zone2Array + ':' + zone3Array);
+// >>>>>>> 64d97ed7b0b8e9746b1442263c24c299f013d4a4
 	 	$.ajax({
 	        url: "./allfloor.jsp",
 	        traditional : true,//배열 보내주려고 사용
@@ -479,18 +479,18 @@ $(".checkedbtn").on("click",function(){
 	        type: "POST",
 	        dataType : "json" ,
 	        success:function(msg){
-<<<<<<< HEAD
+// <<<<<<< HEAD
 	
-=======
-		        var $selectid = $('.finalresult');
-		        //$selectid.empty();
-		    	/*$selectid.append('<tr>'+
-	        						'<td> 건물명 </td>'+
-	        						'<td> 층 </td>'+
-	        						'<td> 호 </td>'+
-	        						'<td> 시설명 </td>'+
-	        					  '</tr>');	*/
->>>>>>> 64d97ed7b0b8e9746b1442263c24c299f013d4a4
+// =======
+// 		        var $selectid = $('.finalresult');
+// 		        //$selectid.empty();
+// 		    	/*$selectid.append('<tr>'+
+// 	        						'<td> 건물명 </td>'+
+// 	        						'<td> 층 </td>'+
+// 	        						'<td> 호 </td>'+
+// 	        						'<td> 시설명 </td>'+
+// 	        					  '</tr>');	*/
+// >>>>>>> 64d97ed7b0b8e9746b1442263c24c299f013d4a4
 		        $.each(msg, function makeSelect(index, item){
 		        	//일정확인 한 값 나오게
 		        	$selectid.append('<tr>'+
@@ -509,7 +509,7 @@ $(".checkedbtn").on("click",function(){
   });//ajax
   
   
-<<<<<<< HEAD
+// <<<<<<< HEAD
 
 	$.ajax({
       url: "./callResult.jsp",
@@ -536,41 +536,41 @@ console.log(jqXHR.status+'\n'+jqXHR.statusText)
 });//ajax
  
 
-=======
+// =======
 
-	$.ajax({
-      url: "./callResult.jsp",
-      traditional : true,//배열 보내주려고 사용
-      data: {arrayResult:arrayResult},
-      contentType: "application/x-www-form-urlencoded; charset=UTF-8",
-      type: "POST",
-      dataType : "json" ,
-      success:function(msg){
-	        var $selectid = $('.finalresult');
-	        $selectid.empty();	
-	    	$selectid.append('<tr>'+
-      						'<td> 건물명 </td>'+
-      						'<td> 층 </td>'+
-      						'<td> 호 </td>'+
-      						'<td> 시설명 </td>'+
-      					  '</tr>');	
-	        $.each(msg, function makeSelect(index, item){
-	        	//일정확인 한 값 나오게
-	        	$selectid.append('<tr>'+
-	        						'<td>'+item.t2zone2nm+'</td>'+
-	        						'<td>'+item.t3floor+"층  "+'</td>'+
-	        						'<td>'+item.t3id+"호  "+'</td>'+
-	        						'<td>'+item.t3zone3nm+'</td>'+
-	        					  '</tr>');	
-	        });//each
-},//success
-error:function(jqXHR,textStatus,errorThrown) {
-console.log(jqXHR.status+'\n'+jqXHR.statusText)
-}//error
-});//ajax
+// 	$.ajax({
+//       url: "./callResult.jsp",
+//       traditional : true,//배열 보내주려고 사용
+//       data: {arrayResult:arrayResult},
+//       contentType: "application/x-www-form-urlencoded; charset=UTF-8",
+//       type: "POST",
+//       dataType : "json" ,
+//       success:function(msg){
+// 	        var $selectid = $('.finalresult');
+// 	        $selectid.empty();	
+// 	    	$selectid.append('<tr>'+
+//       						'<td> 건물명 </td>'+
+//       						'<td> 층 </td>'+
+//       						'<td> 호 </td>'+
+//       						'<td> 시설명 </td>'+
+//       					  '</tr>');	
+// 	        $.each(msg, function makeSelect(index, item){
+// 	        	//일정확인 한 값 나오게
+// 	        	$selectid.append('<tr>'+
+// 	        						'<td>'+item.t2zone2nm+'</td>'+
+// 	        						'<td>'+item.t3floor+"층  "+'</td>'+
+// 	        						'<td>'+item.t3id+"호  "+'</td>'+
+// 	        						'<td>'+item.t3zone3nm+'</td>'+
+// 	        					  '</tr>');	
+// 	        });//each
+// },//success
+// error:function(jqXHR,textStatus,errorThrown) {
+// console.log(jqXHR.status+'\n'+jqXHR.statusText)
+// }//error
+// });//ajax
  
 
->>>>>>> 64d97ed7b0b8e9746b1442263c24c299f013d4a4
+// >>>>>>> 64d97ed7b0b8e9746b1442263c24c299f013d4a4
 $.ajax({
 	
     url: "./allzone3nm.jsp",
@@ -580,18 +580,18 @@ $.ajax({
     type: "POST",
     dataType : "json" ,
     success:function(msg){
-<<<<<<< HEAD
+// <<<<<<< HEAD
     
-=======
-        var $selectid = $('.finalresult');
-       // $selectid.empty();
-    	/*$selectid.append('<tr>'+
-    						'<td> 건물명 </td>'+
-    						'<td> 층 </td>'+
-    						'<td> 호 </td>'+
-    						'<td> 시설명 </td>'+
-    					  '</tr>');	*/
->>>>>>> 64d97ed7b0b8e9746b1442263c24c299f013d4a4
+// =======
+//         var $selectid = $('.finalresult');
+//        // $selectid.empty();
+//     	/*$selectid.append('<tr>'+
+//     						'<td> 건물명 </td>'+
+//     						'<td> 층 </td>'+
+//     						'<td> 호 </td>'+
+//     						'<td> 시설명 </td>'+
+//     					  '</tr>');	*/
+// >>>>>>> 64d97ed7b0b8e9746b1442263c24c299f013d4a4
         $.each(msg, function makeSelect(index, item){
         	//일정확인 한 값 나오게
         	$selectid.append('<tr>'+
