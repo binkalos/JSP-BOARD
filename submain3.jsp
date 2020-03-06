@@ -12,37 +12,16 @@ try{
 	int zone2nmA = getParam(request,"zone2nmA",0);
 	int result = getParam(request,"result",0);
 
-<<<<<<< HEAD
-<<<<<<< HEAD
 	//application.log("건물:"+zone2nmA+" 층:"+zone3nmA+" 시설 :"+ result);
-=======
-	application.log("건물:"+zone2nmA+" 층:"+zone3nmA+" 시설 :"+ result);
->>>>>>> e974d1cd294b4393a629619cc31fb4caae15198e
-=======
-	application.log("건물:"+zone2nmA+" 층:"+zone3nmA+" 시설 :"+ result);
->>>>>>> e974d1cd294b4393a629619cc31fb4caae15198e
 	
 	String sqlList = "SELECT t3.id ,t3.zone3nm, t3.floor,t2.zone2nm ";
 	sqlList+="FROM tb_zone3 as t3 JOIN tb_zone2 as t2 ON t2.seq = t3.seq_zone2 ";
 	sqlList+="JOIN tb_zone as t1 ON t1.seq = t2.seq_zone ";
-<<<<<<< HEAD
-<<<<<<< HEAD
 	sqlList+="WHERE t3.floor = ? and t2.seq = ? and t3.seq = ? ";
 	pstmt = dbconn.prepareStatement(sqlList);
     pstmt.setString(1,zone3nmA);
     pstmt.setInt(2,zone2nmA);
     pstmt.setInt(3,result);
-=======
-=======
->>>>>>> e974d1cd294b4393a629619cc31fb4caae15198e
-	sqlList+="WHERE t3.floor = ? and t2.seq = ?";
-	pstmt = dbconn.prepareStatement(sqlList);
-    pstmt.setString(1,zone3nmA);
-    pstmt.setInt(2,zone2nmA);
-<<<<<<< HEAD
->>>>>>> e974d1cd294b4393a629619cc31fb4caae15198e
-=======
->>>>>>> e974d1cd294b4393a629619cc31fb4caae15198e
     rs = pstmt.executeQuery();
     
     JSONArray jsonArray = new JSONArray();

@@ -8,16 +8,11 @@
 <%@ page import="org.json.simple.*"%>
 <%
 try{
-	String zone3nmA = getParam(request,"zone3nmA","");//String type으로 받아오기 위해 마지막 파라미터 값을 0 -> " "으로 바꿔줌
-	int zone2nmA = getParam(request,"zone2nmA",0);
-	
-	String sqlList = "SELECT t3.id, t3.seq, t3.zone3nm, t3.floor,t2.zone2nm ";
-	sqlList+="FROM tb_zone3 as t3 JOIN tb_zone2 as t2 ON t2.seq = t3.seq_zone2 ";
-	sqlList+="JOIN tb_zone as t1 ON t1.seq = t2.seq_zone ";
-	sqlList+="WHERE t3.floor = ? and t2.seq = ?";
+	int t2seq = getParam(request,"t2seq",0);
+	//application.log(""+t2seq);
+	String sqlList = "select t2.zone2nm, t3.seq ,t3.zone3nm from tb_zone3 as t3 join tb_zone2 as t2 on t2.seq = t3.seq_zone2 where t2.seq = ?";
 	pstmt = dbconn.prepareStatement(sqlList);
-    pstmt.setString(1,zone3nmA);
-    pstmt.setInt(2,zone2nmA);
+    pstmt.setInt(1,t2seq);
     rs = pstmt.executeQuery();
     
     JSONArray jsonArray = new JSONArray();
@@ -26,10 +21,8 @@ try{
     while (rs.next())
     {
     	object = new JSONObject();
-    	object.put("t3id",rs.getString("t3.id"));
-    	object.put("t3zone3nm",rs.getString("t3.zone3nm"));
-    	object.put("t3floor",rs.getString("t3.floor"));
     	object.put("t3seq",rs.getString("t3.seq"));
+    	object.put("t3zone3nm",rs.getString("t3.zone3nm"));
     	jsonArray.add(object);
         object = null;
     }
